@@ -48,6 +48,9 @@
     //四周边距 默认是20,内容较少时使之生效,请先删除设置的MinSize
 //    [[GBProgressHUD shareinstance].hud setMargin:20.f];
     
+    //hud的显示位置,正数时在中间位置的下方,负数时在中间位置的上方
+    //    [[GBProgressHUD shareinstance].hud setOffset:CGPointMake(0, 250)];
+    
     //bezelView.style有2个枚举值
     //1.MBProgressHUDBackgroundStyleSolidColor,这个枚举值是实心颜色的意思，在这个枚举的基础上，你可以设置任意你想要的颜色。
     //需要注意的是：设置半透明，不要用hud.alpha，因为设置alpha会导致子控件或者内容全部跟着一起alpha，比如你hud上文字，那么文字也会变成透明的。
@@ -135,11 +138,11 @@
  */
 +(void)showMessage:(NSString *)msg {
     [self show:msg inView:nil mode:GBProgressModeOnlyText];
-    [[GBProgressHUD shareinstance].hud hideAnimated:YES afterDelay:1.0];
+    [[GBProgressHUD shareinstance].hud hideAnimated:YES afterDelay:durationTime];
 }
 +(void)showMessage:(NSString *)msg inView:(UIView *)view{
     [self show:msg inView:view mode:GBProgressModeOnlyText];
-    [[GBProgressHUD shareinstance].hud hideAnimated:YES afterDelay:1.0];
+    [[GBProgressHUD shareinstance].hud hideAnimated:YES afterDelay:durationTime];
 }
 +(void)showMessage:(NSString *)msg inView:(UIView *)view afterDelayTime:(NSInteger)delay{
     [self show:msg inView:view mode:GBProgressModeOnlyText];
@@ -152,11 +155,11 @@
  */
 + (void)showSuccess:(NSString *)msg {
     [self show:msg inView:nil mode:GBProgressModeSuccess];
-    [[GBProgressHUD shareinstance].hud hideAnimated:YES afterDelay:1.0];
+    [[GBProgressHUD shareinstance].hud hideAnimated:YES afterDelay:durationTime];
 }
 +(void)showSuccess:(NSString *)msg inview:(UIView *)view{
     [self show:msg inView:view mode:GBProgressModeSuccess];
-    [[GBProgressHUD shareinstance].hud hideAnimated:YES afterDelay:1.0];
+    [[GBProgressHUD shareinstance].hud hideAnimated:YES afterDelay:durationTime];
 }
 
 
@@ -165,11 +168,11 @@
  */
 + (void)showFailure:(NSString *)msg {
     [self show:msg inView:nil mode:GBProgressModeFailure];
-    [[GBProgressHUD shareinstance].hud hideAnimated:YES afterDelay:1.0];
+    [[GBProgressHUD shareinstance].hud hideAnimated:YES afterDelay:durationTime];
 }
 + (void)showFailure:(NSString *)msg inview:(UIView *)view {
     [self show:msg inView:view mode:GBProgressModeFailure];
-    [[GBProgressHUD shareinstance].hud hideAnimated:YES afterDelay:1.0];
+    [[GBProgressHUD shareinstance].hud hideAnimated:YES afterDelay:durationTime];
 }
 
 
@@ -178,11 +181,11 @@
  */
 +(void)showLoadingWithMsg:(NSString *)msg {
     [self show:msg inView:nil mode:GBProgressModeLoading];
-    [[GBProgressHUD shareinstance].hud hideAnimated:YES afterDelay:1.0];
+    [[GBProgressHUD shareinstance].hud hideAnimated:YES afterDelay:durationTime];
 }
 +(void)showLoadingWithMsg:(NSString *)msg inView:(UIView *)view{
     [self show:msg inView:view mode:GBProgressModeLoading];
-    [[GBProgressHUD shareinstance].hud hideAnimated:YES afterDelay:1.0];
+    [[GBProgressHUD shareinstance].hud hideAnimated:YES afterDelay:durationTime];
 }
 
 
@@ -191,11 +194,11 @@
  */
 +(void)showCircleLoadingWithMsg:(NSString *)msg {
     [self show:msg inView:nil mode:GBProgressModeCircle];
-    [[GBProgressHUD shareinstance].hud hideAnimated:YES afterDelay:1.0];
+    [[GBProgressHUD shareinstance].hud hideAnimated:YES afterDelay:durationTime];
 }
 +(void)showCircleLoadingWithMsg:(NSString *)msg inView:(UIView *)view{
     [self show:msg inView:view mode:GBProgressModeCircle];
-    [[GBProgressHUD shareinstance].hud hideAnimated:YES afterDelay:1.0];
+    [[GBProgressHUD shareinstance].hud hideAnimated:YES afterDelay:durationTime];
 }
 
 
@@ -218,12 +221,12 @@
 +(void)showCustomImageWithMsg:(NSString *)msg imageName:(NSString *)imageName {
     UIImageView *img = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
     [self show:msg inView:nil mode:GBProgressModeCustomerImage customImgView:img];
-    [[GBProgressHUD shareinstance].hud hideAnimated:YES afterDelay:1.0];
+    [[GBProgressHUD shareinstance].hud hideAnimated:YES afterDelay:durationTime];
 }
 +(void)showCustomImageWithMsg:(NSString *)msg imageName:(NSString *)imageName inview:(UIView *)view{
     UIImageView *img = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
     [self show:msg inView:view mode:GBProgressModeCustomerImage customImgView:img];
-    [[GBProgressHUD shareinstance].hud hideAnimated:YES afterDelay:1.0];
+    [[GBProgressHUD shareinstance].hud hideAnimated:YES afterDelay:durationTime];
 }
 
 
@@ -238,7 +241,7 @@
     [showImageView startAnimating];
     
     [self show:msg inView:nil mode:GBProgressModeCustomAnimation customImgView:showImageView];
-    [[GBProgressHUD shareinstance].hud hideAnimated:YES afterDelay:1.0];
+    [[GBProgressHUD shareinstance].hud hideAnimated:YES afterDelay:durationTime];
 }
 +(void)showCustomAnimation:(NSString *)msg withImgArry:(NSArray *)imgArry inview:(UIView *)view{
     
@@ -249,7 +252,7 @@
     [showImageView startAnimating];
     
     [self show:msg inView:view mode:GBProgressModeCustomAnimation customImgView:showImageView];
-    [[GBProgressHUD shareinstance].hud hideAnimated:YES afterDelay:1.0];
+    [[GBProgressHUD shareinstance].hud hideAnimated:YES afterDelay:durationTime];
 }
 
 
@@ -259,12 +262,12 @@
 + (void)showClearChrysanthemum:(NSString *)msg {
     
     [self show:msg inView:nil mode:GBProgressModeClearChrysanthemum customImgView:nil];
-    [[GBProgressHUD shareinstance].hud hideAnimated:YES afterDelay:1.0];
+    [[GBProgressHUD shareinstance].hud hideAnimated:YES afterDelay:durationTime];
 }
 + (void)showClearChrysanthemum:(NSString *)msg inview:(UIView *)view{
     
     [self show:msg inView:nil mode:GBProgressModeClearChrysanthemum customImgView:nil];
-    [[GBProgressHUD shareinstance].hud hideAnimated:YES afterDelay:1.0];
+    [[GBProgressHUD shareinstance].hud hideAnimated:YES afterDelay:durationTime];
 }
 
 

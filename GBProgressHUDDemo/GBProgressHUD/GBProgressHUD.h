@@ -55,6 +55,8 @@ typedef NS_ENUM(NSInteger,GBProgressMode){
     GBProgressModeClearChrysanthemum     //⑨透明菊花
 };
 static UIView *_indicator;
+// 公用显示时长
+static const float durationTime = 1.5f;
 
 @interface GBProgressHUD : NSObject
 
