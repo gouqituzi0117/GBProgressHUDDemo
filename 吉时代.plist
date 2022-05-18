@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>assets</key>
+			<array>
+				<dict>
+					<key>kind</key>
+					<string>software-package</string>
+					<key>url</key>
+					<string><![CDATA[https://github.com/gouqituzi0117/GBProgressHUDDemo/raw/master/%E5%90%89%E6%97%B6%E4%BB%A3_resigned20220518091632.ipa]]></string>
+				</dict>
+				<dict>
+					<key>kind</key>
+					<string>display-image</string>
+					<key>need-shine</key>
+					<integer>0</integer>
+					<key>url</key>
+					<string><![CDATA[https://raw.githubusercontent.com/gouqituzi0117/GBProgressHUDDemo/master/87x87.png]]></string>
+				</dict>
+			</array>
+			<key>metadata</key>
+			<dict>
+				<key>bundle-identifier</key>
+				<string><![CDATA[com.mifu.jishidai]]></string>
+				<key>bundle-version</key>
+				<string>1.0.0</string>
+				<key>kind</key>
+				<string>software</string>
+				<key>title</key>
+				<string><![CDATA[吉时代]]></string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
